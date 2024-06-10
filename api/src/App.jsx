@@ -41,13 +41,11 @@ useEffect(()=>{
   fetch(`https://fakestoreapi.com/products`)
   .then((res)=>res.json())
   .then((res)=>{
-    console.log("res",res)
+    console.log("res",res);
     setData(res);
   })
-  .catch((err)=>console.log(err)) 
-},[])
-
-
+  .catch((err)=>console.log(err)); 
+},[]);
 
 
   return (
