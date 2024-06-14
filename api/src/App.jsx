@@ -51,7 +51,7 @@ useEffect(()=>{
   return (
     <>
       {
-        data?.map((prod)=>(
+        data.map((prod)=>(
           <div key={prod.id}>
             <img width={'150px'} src={prod.image} alt="prod_pic"/>
             <p>Name: {prod.title}</p>
