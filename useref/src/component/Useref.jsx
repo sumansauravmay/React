@@ -17,6 +17,14 @@ const Useref = () => {
     setData([...data, newData]);
     inputref.current.value="";
   };
+
+const deletefunc=(id)=>{
+    let deletedata=data.filter((el)=>{
+        return el.id!==id;
+    })
+    setData(deletedata);
+}
+
   return (
     <>
     <div className="App">
@@ -25,7 +33,10 @@ const Useref = () => {
     </div>
 
     {data.map((item) => (
-      <div key={item.id}>{item.input} - {item.id}</div>
+      <div key={item.id}>
+        <p>{item.input} - {item.id}</p>
+        <button onClick={()=>deletefunc(item.id)}>Delete</button>
+      </div>
     ))}
   </>
   )
