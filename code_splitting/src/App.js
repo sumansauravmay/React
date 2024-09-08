@@ -1,14 +1,12 @@
 
-import './App.css';
-import Allroutes from './components/Allroutes';
-import Navbar from './components/Navbar';
+import React, { Suspense } from 'react';
+let Home=React.lazy(()=>import("./components/Home"));
 
 function App() {
   return (
-    <div className="App">
-     <Navbar/>
-     <Allroutes/>
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Home/>
+     </Suspense>
   );
 }
 
