@@ -74,9 +74,32 @@ module.exports = merge(common, {
 9. run react app using webpack commands:
 
 npx webpack serve --config webpack.dev.js
+npx webpack --config webpack.dev.js
 npx webpack --config webpack.prod.js
 
+or
 
 
+add the below code in the package.json in the script section
+
+{
+   "start": "webpack serve --config webpack.dev.js",
+   "build": "webpack --config webpack.prod.js"
+}
+
+10. we can also use percel
+
+a. npm install --save-dev parcel-bundler 
+ to run this write 
+ 
+ npx parcel index.html
+
+
+
+
+
+b. for the production level, run the command
+
+npx parcel build index.html
 
 
