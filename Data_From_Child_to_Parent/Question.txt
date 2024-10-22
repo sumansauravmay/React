@@ -1,0 +1,39 @@
+Callback=>
+
+there are 2 components A, and C.
+C is the child of A. 
+There is data in the C component.
+example: 
+let [data, setData]=useState([{
+name:"Suman",
+age:"25",
+city:"Delhi"
+}])
+I want to get the data in the A from C without using Context api or Redux. 
+How can I do?
+
+Explain with example in details.
+
+
+
+
+
+ForwardRef=>
+
+
+
+
+there are 3 components A,B, and C.
+B is the child of A and C is the child of B. 
+There is data in the C component.
+example: 
+let [data, setData]=useState([{
+name:"Suman",
+age:"25",
+city:"Delhi"
+}])
+I want to get the data in the A from C without using Context api or Redux and without passing data in the B component. How can I do?
+
+Explain with example in details
+
+
