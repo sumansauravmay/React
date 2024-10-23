@@ -1,11 +1,15 @@
 
 import './App.css';
+import Todo from './todo/Todo';
+import TodoItem from './todo/TodoItem';
+import TodoProvider from './todo/TodoProvider';
 
 function App() {
   return (
-    <div className="App">
-     Todo
-    </div>
+    <TodoProvider>
+     <Todo/>
+     <TodoItem/>
+    </TodoProvider>
   );
 }
 

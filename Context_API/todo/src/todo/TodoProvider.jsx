@@ -11,14 +11,46 @@ const TodoProvider = ({ children }) => {
 
   let addTodo = () => {
     let newTodo = {
-      id: 1,
+      id: Date.now(),
       task: task,
       status: status,
     };
-    setTodo([...todo, newTodo])
+    setTodo([...todo, newTodo]);
+    setTask("");
   };
 
-  return <contextTodo.Provider value={{todo, addTodo}}>{children}</contextTodo.Provider>;
+  let handleChange = (e) => {
+    setTask(e.target.value);
+  };
+
+  let handleDelete = (id) => {
+    let dataafterdeletion = todo.filter((item) => {
+      return item.id !== id;
+    });
+    setTodo(dataafterdeletion);
+  };
+
+  let handleToggleStatus = (id) => {
+    let x = todo.map((item) => {
+      return item.id === id ? { ...item, status: !item.status } : item;
+    });
+    setTodo(x);
+  };
+
+  return (
+    <contextTodo.Provider
+      value={{
+        todo,
+        addTodo,
+        task,
+        handleChange,
+        handleToggleStatus,
+        handleDelete
+      }}
+    >
+      {children}
+    </contextTodo.Provider>
+  );
 };
 
 export default TodoProvider;
